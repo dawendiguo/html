@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个文件大小</title>
+    <link type=text/css rel=stylesheet href=../Css/css5.css>
+    <script type=text/javascript language=jscript src=js3.js /></script>
+</head>
+<body>
+    <form id=frmTmp>
+        <input type=submit name=submit id=submit onsubmit=" return file_size(this.files);">
+    <fieldset>
+    
+    <legend>获取多个文件大小</legend>
+    <input name=filupload type=file id= filupload onchange="return file_size(this.files);" multiple=true />
+    <ul id=ulUpload>
+    </ul></fieldset></form>
+
+ <p id="ptest"></p>
+</body>
+</html>
