@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐播放</title>
+</head>
+<body>
+    <p>我的音乐播放</p>
+    <input type="submit" value="上一曲" onClick="previous();"/>
+    <input type="submit" value="下一曲" onClick="next();"/>
+    <input type="submit" value="播放" onClick="display();"/>
+    <button id=btntest type=button onclick="next();">NEXT</button>
+    <audio src="music/1.mp3" id="media" name="mudic">
+    <script type=text/javascript language=javascript>
+var musicList = new Array(music/1.mp3,music/2.mp3,music/3.mp3);
+var index=0;
+function previous(){
+    alert("下一曲");
+    if(index > 0)
+        index--;
+    display(index);
+}
+function next(){
+    if(index < musicList.length-1)
+        index++;
+    display(index);
+}
+function $$(id){
+return document.getElementById(id);
+}
+function display(index){
+    alert("displaying");
+document.audio["mudic"].src=musicList[index];
+alert("displaying"+musicList[index]);
+}
+    </script>
+</body>
+</html>

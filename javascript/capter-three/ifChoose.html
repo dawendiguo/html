@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script type=text/javascript>
+    var ftmp=Number(prompt("输入要转化的华氏温度",32));
+    var tmp;
+    tmp = 5/9 * (ftmp - 32);
+    document.write(ftmp + "\xB0 华氏度 等同于<br>"+ tmp +"\xB0 摄氏度")
+    if(tmp < 0)
+    document.write("温度低于0度");
+    if(tmp == 100)
+    document.write("这是沸水");
+    </script>
+</body>
+</html>

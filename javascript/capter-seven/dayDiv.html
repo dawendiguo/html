@@ -1,0 +1,101 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两个日期之间时间差</title>
+    <script type="text/javascript">
+{
+    function writeOptions(start,end){
+    var optionCount;
+    for(optionCount=start;
+            optionCount<=end;
+            optionCount++){
+        document.write("<option value="+optionCount+">"+optionCount);
+    }
+    }
+    function writeMonthOption()
+    {
+    var theMonth;
+    var monthCount;
+    var theDate=new Date(1);
+    for(monthCount=0;monthCount<12;monthCount++)
+    {
+    theDate.setMonth(monthCount);
+    theMonth=theDate.toString();
+    theMonth = theMonth.substr(4,3);
+    document.write("<option value="+theMonth+">"+theMonth);
+    }
+    }
+function calcDateDiff()
+{
+var myForm=document.form1;
+var firstDay=myForm.firstDay.options[myForm.firstDay.selectedIndex].value;
+var secondDay=myForm.secondDay.options[myForm.secondDay.selectedIndex].value;
+var firstMonth=myForm.firstMonth.options[myForm.firstMonth.selectedIndex].value;
+var secondMonth=myForm.secondMonth.options[myForm.secondMonth.selectedIndex].value;
+var firstYear=myForm.firstYear.options[myForm.firstYear.selectedIndex].value;
+var secondYear=myForm.secondYear.options[myForm.secondYear.selectedIndex].value;
+    var firstDay=new Date(firstDay+"  "+firstMonth+" " +firstYear);
+    var secondDay = new Date(secondDay + " "+ secondMonth + " "+ secondYear);
+    var dateDiff=(secondDay.valueOf() - firstDay.valueOf());
+    dateDiff = Math.floor(Math.abs((((dateDiff/1000)/60)/60)/24));
+    alert("你到现在总共活了\n"+dateDiff+"\t天");
+
+    }
+function window_onload(){
+var theForm=document.form1;
+var nowDate=new Date();
+theForm.firstDay.options[nowDate.getDay()+1].selected=true;
+theForm.secondDay.options[nowDate.getDay()+2].selected=true;
+theForm.firstMonth.options[nowDate.getMonth()].selected=true;
+theForm.secondMonth.options[nowDate.getMonth()].selected=true;
+theForm.firstYear.options[2000-1970].selected=true;
+theForm.secondYear.options[nowDate.getFullYear()-1970].selected=true;
+}
+}
+    </script>
+</head>
+<body onload="window_onload()">
+    <form action="" name="form1">
+    <p>
+    你的出生日期：</br>
+    <select id="" name="firstDay">
+        <script type="text/javascript">
+        writeOptions(1,31);
+        </script>
+    </select>
+    <select id="" name="firstMonth">
+        <script type="text/javascript">
+        writeMonthOption();
+        </script>
+    </select>
+    <select id="" name="firstYear">
+        <script type = "text/javascript">
+        writeOptions(1970,2020);
+        </script>   
+    </select>
+    </p>
+    <p>
+    今日日期：</br>
+    <select id="" name="secondDay">
+        <script type="text/javascript">
+        writeOptions(1,31);
+        </script>
+    </select>
+    <select id="" name="secondMonth">
+        <script type="text/javascript">
+        writeMonthOption();
+        </script>
+    </select>
+    <select id="" name="secondYear">
+        <script type = "text/javascript">
+        writeOptions(1970,2020);
+        </script>   
+    </select>
+    </p>
+    <p>
+    <button onclick="calcDateDiff()">计算</button>
+    </form>
+    
+</body>
+</html>

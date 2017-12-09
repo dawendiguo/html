@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+    <script type=text/javascript>
+function btn_calc(){
+    try{
+    if(window.top.calcFactorial == null)
+    throw "页面没有按照正确的框架载入";
+    if(document.form1.txtNum1.value == "")
+    throw "!请在计算前输入一个数字";
+    if(document.form1.txtNum1.value < 0)
+    throw "!请输入一个正数";
+    if(isNaN(document.form1.txtNum1.value))
+    throw  "请输入一个数字";
+    document.form1.txtResult.value = 
+        window.parent.calcFactorial(document.form1.txtNum1.value);
+    }
+    catch(exception){
+        if(typeof(exception) == "string")
+            { if(exception.charAt(0) == "!"){
+            alert(exception.substr(1));
+            document.form1.txtNum1.focus();
+            document.form1.txtNum1.select();
+        }
+        else{
+            alert(exception);
+        }
+    }
+    else{
+    alert("错误发生"+exception.message);
+    }
+}
+}
+
+    </script>
+</head>
+<body>
+     <form action="" name = form1>
+         <input type=text name=txtNum1 size=3 /> factorial is 
+        <input type=text name=txtResult size=25 /> <br/>
+        <input type="button" value="Calculate Facorial" 
+                             name=butcalculate onClick="btn_calc();" />
+     </form>  
+</body>
+</html>

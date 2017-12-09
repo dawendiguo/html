@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>textarea test</title>
+    <script type=text/javascript>
+function displayEvent(enventName){
+var mymessage=document.form1.textArea2.value;
+mymessage += enventName;
+document.form1.textArea2.value=mymessage;
+}
+    </script>
+</head>
+<body>
+    <form action="" name=form1>
+    <textarea id="" name="textArea1" cols="10" rows="40" 
+        onchang="displayEvent('onchang/n');"
+        onkeydown="displayEvent('onkeydown/n');"
+        onkeyup="displayEvent('onkeyup');"
+        onkeypress="displayEvent('onkeypress');">
+    </textarea>
+    <textarea id="" name="textArea2" cols="15" rows="40"></textarea>
+    <br />
+    <br />
+    <input type="button" value="clear text area" name="button1" onclick="document.form1.textArea2.value=' '" />
+    <form>
+</body>
+</html>

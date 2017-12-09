@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加和删除option</title>
+    <script type=text/javascript>
+{
+    function btn_removeWed(){
+        if(document.form1.theDay.options[2].text=="Wednesday"){
+    document.form1.theDay.options[2]=null;
+    alert("删除周三成功");
+        }
+    else
+        alert("没有wednesday");
+    }
+    function btn_addWed(){
+        if(document.form1.theDay.options[2]!="Wednesday"){
+        var indexCount;
+        var days=document.form1.theDay;
+        var lastoption=new Option();
+        days.options[days.options.lenght]=lastoption;
+        for(indexCount = days.options.lengh-1;indexCount>2;indexCount--){
+        days.options[indexCount].value=days.options[indexCount-1].value;
+        days.options[indexCount].text=days.options[indexCount-1].text;
+        }
+        var option=new Option("Wednesday",2);
+        days.options[2]=option;
+        }
+        else
+            alert("Do ou want hava two wednesday");
+    }
+}</script>
+</head>
+<body>
+    <form action="" name=form1>
+       <select id="theDay" name="theDay" size="5">
+            <option value="0" selected="selected">Monday</option>
+            <option value="1">Tuesday</option>
+            <option value="2">Wednesday</option>
+            <option value="3">Thursday</option>
+            <option value="4">Friday</option>
+            <option value="5">Saturday</option>
+            <option value="6">Sunday</option>
+        </select>
+    </form>
+    <input type="button" value="删除周三" name="btnremove_wed" onclick="btn_removeWed()"/>
+    <input type="button" value="增加周三" name="btnadd_wed" onclick="btn_addWed()"/>
+</body>
+</html>
