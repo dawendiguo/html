@@ -52,6 +52,15 @@ theForm.secondMonth.options[nowDate.getMonth()].selected=true;
 theForm.firstYear.options[2000-1970].selected=true;
 theForm.secondYear.options[nowDate.getFullYear()-1970].selected=true;
 }
+function not_change(){
+    var ele=document.form1.secondDay;
+    ele.onfocus=function(){
+        this.defaultIndex = this.selectedIndex;
+    }
+    ele.onchange=function(){
+        this.selectedIndex=this.defaultIndex;
+    }
+}
 }
     </script>
 </head>
