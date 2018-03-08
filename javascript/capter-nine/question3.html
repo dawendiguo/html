@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>例3</title>
+    <script type = "text/javascript">
+function change(){
+    var mystring = document.form1.txtbefor.value;
+    var myRegExp = /\ba\b/gi;
+    mystring = mystring.replace(myRegExp,"the");
+    document.form1.txtafter.value = mystring;
+}
+    </script>
+</head>
+<body>
+    <form action="" name = "form1" >
+    <p>before:</p>
+    <input type = "text" name="txtbefor" onchange="change()"/>
+    <p>after:</p>
+    <input type="text" name="txtafter">
+    </form>
+</body>
+</html>

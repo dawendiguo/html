@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性更改</title>
+</head>
+<body>
+    <p id="par1">This is some text.</p>
+    <script type="text/javascript">
+    var pElement = document.getElementById("par1");
+    pElement.setAttribute("align","center");
+    alert(pElement.getAttribute("align"));
+    pElement.removeAttribute("align");
+    </script>
+</body>
+</html>

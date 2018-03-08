@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>主页</title>
+    <title>主FRAME</title>
     <script type="text/javascript">
     var pageVisited = new Array();
     function returnPageVisited()
 {
- var returnValue="您在访问以下网页:\n";
+ var returnValue="您在访问以下网页\n";
  var pageVisitedIndex;
  var numberOfVisited=pageVisited.length;
 for(pageVisitedIndex=0;pageVisitedIndex<numberOfVisited;pageVisitedIndex++)
@@ -25,9 +25,9 @@ return true;
 }
     </script>
 </head>
-   <frameset cols="50%,*" id=test>
-  <frame name="frmleft" src="example1.html">
-  <frame name="frmright" src="example2.html">
+   <frameset cols="200,*" id=test>
+  <frame name="menuFrame" src="menuFrame.html">
+  <frame name="mainFrame" src="mainFrame.html">
    </frameset>
 <body>
 </body>

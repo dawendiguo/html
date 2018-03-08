@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>例2</title>
+    <script type = "text/javascript">
+function onload(){
+    var output = "";
+    output = output +  "<p>处理前：<\p>";
+    var myString = "This sentence has has a fault and and we need to fix it.";
+    output = output + myString;
+    var myRegExp = new RegExp("\(\\b\\w+\\b\) \\1","g");
+    myString = myString.replace(myRegExp,"$1");
+    output = output + "<p>处理后<\p>";
+    output = output + myString;
+    document.write(output);
+}
+    </script>
+</head>
+<body onload = "onload()">
+    
+</body>
+</html>

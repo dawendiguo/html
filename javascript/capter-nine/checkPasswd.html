@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入检测</title>
+    <script type = "text/javascript">
+function regExp_IsVaild(text){
+    var myRegExp = /[^a-z\d]/i;
+    return !(myRegExp.test(text));
+}
+    function btCheckVaild(){
+    if(regExp_IsVaild(document.form1.txtPhrase.value) == true)
+        alert("您输入的密码可用");
+    else
+        alert("您输入的密码包含不可用字符。");
+    }
+    </script>
+</head>
+<body>
+    <form action="" name="form1">
+    <input type="text" name="txtPhrase">
+    <br/>
+    <input type="button" value="检查"  name="butCheckValid" onclick="btCheckVaild()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example2.html</title>
+    <script type="text/javascript">
+    function btnShow_click()
+{
+document.form1.txtaPageVisited.value=window.top.returnPageVisited();
+}
+function setFrameAndPageContorls(linkIndex)
+{
+var formObject= window.parent.parent.menuFrame.document.form1;
+formObject.choosePage.selectedIndex=linkIndex;
+if(window.parent.frameTop == window.self)
+formObject.radFrame[0].checked=true;
+else
+formObject.radFrame[1].checked=true;
+return true;
+}
+    </script>
+</head>
+<body onload="window.top.addPage(window.location.href)">
+    <h2>
+    这是example2</h2>
+    <p>
+    <a href="example1.html" name=pageALink onclick="return setFrameAndPageContorls(0)"> page A </a>
+    <a href="example2.html" name=pageBLink onclick="return setFrameAndPageContorls(1)"> page B </a>
+    <a href="example3.html" name=pageCLink onclick="return setFrameAndPageContorls(2)"> page C </a>
+    <a href="example4.html" name=pageDLink onclick="return setFrameAndPageContorls(3)"> page D </a>
+    </p>
+   <form action="" name="form1"> 
+   <textarea id="" name="txtaPageVisited" cols="10" rows="15"></textarea>
+   </br>
+   <input type="button" onclick="btnShow_click()" value="显示"/>
+   </form>
+</body>
+</html>

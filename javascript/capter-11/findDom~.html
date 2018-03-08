@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反向定位</title>
+</head>
+<body>
+    <h1 id="heading1">My heading</h1>
+    <p id="par1">This is some text in a paragraph</p>
+    <script type="text/javascript">
+    var pElement = document.getElementById("par1");
+    pElement.style.color = "red";
+    pElement.setAttribute("align","center");
+    
+    var h1Element;
+    if(pElement.previousSibling == 1)
+    h1Element = pElement.previousSibling;
+    else
+    h1Element = pElement.previousSibling.previousSibling;
+    
+    h1Element.style.color = "blue";
+    h1Element.setAttribute("align","center");
+    </script>
+</body>
+</html>

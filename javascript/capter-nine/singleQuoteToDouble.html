@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双引号替换单引号</title>
+    <script type="text/javascript">
+    function replaceQuote(textAreaControl)
+{
+    var myText = textAreaControl.value;
+    var myRegExp = /\B'|'\B/g;
+    myText = myText.replace(myRegExp,'"');
+    textAreaControl.value=myText;
+}
+    </script>
+</head>
+<body>
+    <form action="" name = "form1">
+    <textarea id="textarea1" name="textarea1" cols="20" rows="40">
+    'Hello World' said Mr O'Connerly.
+    He the said 'My Name is O'connerly, yes that's right, O'Connerly'.
+    </textarea>
+    <br/>
+    <input type="button" value="Replace" name="buttonSplit"
+                                         onclick="replaceQuote(document.form1.textarea1)">
+    </form>
+</body>
+</html>

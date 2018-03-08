@@ -1,0 +1,27 @@
+body{
+    font:16px sans-serif;
+}
+
+div#tmpDialogue{
+    display:none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:500px;
+    height:500px;
+    margin:-251px 0 0 -251px;
+    border:1px solid blue;
+    background:lightblue;
+}
+
+body#tmpDialog div.tmpDialogOn{
+    display:block;
+}
+
+input#tmpDialogClose{
+    position:absolute;
+    bottom:5px;
+    right:5px;
+    width:200px;
+}
+

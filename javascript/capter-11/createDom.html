@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>建立DOM</title>
+</head>
+<body>
+    <script type="text/javascript">
+    var newText = document.createTextNode("My Heading");
+    var newElement = document.createElement("h1");
+    
+    newElement.appendChild(newText);
+    document.body.appendChild(newElement);
+    
+    newText = document.createTextNode("This is some text in a paragraph");
+    newElement = document.createElement("p");
+    
+    newElement.appendChild(newText);
+    document.body.appendChild(newElement);
+    </script>
+</body>
+</html>

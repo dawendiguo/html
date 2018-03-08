@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+    <meta charset="UTF-8">
+    <title>Regular Expression Tester</title>
+    <style tye="text/css">
+body,td,th{
+    font-family:Arial,Helvetica,sans-serif;
+}
+    </style>
+    <script type="text/javascript">
+function getRegExpFlags(){
+    
+    var regExpFlags = '';
+    if(document.form1.chkGlobal.checked)
+    regExpFlags+='g';
+    if(document.form1.chkCaseInsensitive.checked)
+    regExpFlags+='i';
+    if(document.form1.chkMultiLine.checked)
+    regExpFlags+='m';
+    return regExpFlags;
+}
+function doTest(){
+    var testRegExp = new RegExp(document.form1.txtRegularExpression.value,getRegExpFlags());
+    if(testRegExp.test(document.form1.textTestString.value)){
+        document.form1.txtTestResult.value = "匹配";
+    }
+    else
+        document.form1.txtTestResult.value = "不匹配";
+}
+
+function findMatches(){
+    var testReExp = new RegExp(document.form1.txtRegularExpression.value,getRegExpFlags());
+    var myTestString = new String(document.form1.textTestString.value);
+    var matchArray = myTestString.match(testReExp);
+    document.form1.txtTestResult.value = matchArray.join('\n');
+}
+   </script>
+</head>
+<body>
+    <form action="" id="form1" name="form1" method="post" >
+    <p>
+        Regular Expression: <br/>
+    <label for="">
+    <input type="text" id="txtRegularExpression" name="txtRegularExpression" size = "100" value=" " />
+    <br />
+    Globel
+    <input type="checkbox" name="chkGlobal" id="chkGlobal"  />
+    </label>
+    Case Insensitive
+    <label>
+        <input type="checkbox" name="chkCaseInsensitive" id="chkCaseInsensitive" \>
+    </label>
+
+    Muti Line
+    <label for="">
+    <input type="checkbox" id="chkMultiLine" name="chkMultiLine" \>
+    </label>
+    </p>
+    <p>
+    <label>
+        Test Text:<br/>
+        <textarea id="textTestString" name="textTestString" cols="100" rows="8"></textarea>
+    </label>
+    </p>
+    <p>
+    <label>
+        Text Result:<br/>
+    <textarea id="txtTestResult" name="txtTestResult" cols="100" rows="8"></textarea>
+    </label>
+    </p>
+    <p>
+    <label for="">
+    <input type="button" name="cmdTest" id="cmdTest" value="Test"  onclick="doTest()">
+    </label>
+    <label for="">
+    <input type="button" name="cmdMatch" id="cmdMatch" value="MATCH" onclick="findMatches()"></label>
+    <label for="">
+    <input type="reset" name="cmdClearForm" id="cmdClearForm" value="reset Form" >
+    </label>
+    </p>
+    <p>&nbsp;</p>
+    </form>  
+</body>
+</html>

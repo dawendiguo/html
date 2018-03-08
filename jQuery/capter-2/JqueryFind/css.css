@@ -1,0 +1,19 @@
+    body{
+    font:16px sans-serif;
+    }
+    ul#tmpFav{
+        list-style:none;
+        margin:0;
+        padding:0;
+    }
+    ul#tmpFav li{
+        margin:1px;
+        padding:3px;
+    }
+    a{
+        text-decoration:none;
+    }
+    li.tmpFound{
+        background:yellowgreen;
+    }
+
