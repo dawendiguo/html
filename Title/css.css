@@ -1,0 +1,19 @@
+body{margin:0;
+background:#DDDDDD;
+}
+div{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+h1{
+font-style:oblique;
+text-align:left;
+top:0;
+left:0;
+right:0;
+bottom:0;
+color:#4b0082;
+}

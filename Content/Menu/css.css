@@ -1,0 +1,16 @@
+body{
+    margin:0;
+background:#dddddd;
+text-align:center;
+}
+p
+{
+    padding:2px;
+}
+
+p.menuSelect{
+text-align:right;
+color:blue;
+font-weight:bold;
+background:white;
+}

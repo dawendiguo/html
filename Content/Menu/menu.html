@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单</title>
+    <script type='text/javascript' src='../../includeJS/jquery.js'>
+    </script>
+    <link rel="stylesheet" href="css.css" type='text/css'/>
+</head>
+<body>
+    <p>Introduce</p>
+    <p>Books</p>
+    <p>Games</p>
+    <p>Tools</p>
+    <p>C++</p>
+    <p>JAVA</p>
+    <p>HTML5</p>
+    <p>LinuxApp</p>
+    <script type='text/javascript'>
+function handle(e){
+    var file='../Details/'+e.target.innerHTML+'.html';
+    window.parent.details.location.href=file;
+    $('p').removeClass('menuSelect');
+    $(e.target).addClass('menuSelect');
+}
+    var pStr = document.getElementsByTagName('p');
+    for(var i = 0;i < pStr.length;i++){
+        pStr[i].onclick=handle;
+    }
+   // document.getElementsByTagName('p').onclick=handle;
+    
+</script>
+</body>
+</html>

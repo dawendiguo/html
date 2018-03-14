@@ -1,0 +1,39 @@
+body{
+    padding:0;
+    margin:0;
+}
+p
+{
+    margin:0;
+}
+h2{
+    text-align:center
+}
+div.books
+{
+    position:relative;
+    margin:5px;
+    float:left;
+    height:180px;
+    width:100px;
+    background:yellow;
+}
+
+p.menuSelect{
+text-align:right;
+color:blue;
+font-weight:bold;
+background:white;
+}
+div.links{
+    position:absolute;
+    text-align:right;
+    width:100%;
+    bottom:3px;
+    padding;2px;
+}
+a.links{
+    position:relative;
+    color:blue;
+    bottom:3px;
+}
