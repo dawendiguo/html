@@ -9,23 +9,37 @@
 </head>
 <body>
     <h2>我的书籍</h2>
-    <p>现在还不能实现完全功能！</p>
-    <div class="books">Book1</div>
-    <div class="books">Book2</div>
-    <div class="books">Book3</div>
-    <div class="books">Book5</div>
-    <div class="books">Book6</div>
-    <div class="books">Book7</div>
-    <div class="books">Book8</div>
-    <div class="books">Book9</div>
-    <div class="books">Book10</div>
-    <div class="books">Book11</div>
-    <div class="books">Book12</div>
-    <div class="books">Book13</div>
-    <div class="books">Book14</div>
-    <div class="books">Book15</div>
-    <div class="books">Book16</div>
-    <div class="books">Book17</div>
+    <center>
+    <table border="1">
+
+<?php
+include "./books/booksClass.php";
+function listFile($dir){
+    if(is_dir($dir)){
+        if($dh=opendir($dir)){
+            while(($file=readdir($dh))!==false)
+            {
+                if((is_dir($dir."/".$file))&&$file!="."&&$file!="..")
+                {
+                    $path=$dir."/".$file;
+                    listFile($path);
+                }
+                else{
+                    if($file!="."&&$file!=".."){
+                    $path=$dir."/".$file;
+                    $currentBook=new Book($path);
+                    $currentBook->DisplayTable();
+        }}
+            }
+        }
+        closedir($dh);
+        }
+    }
+listFile("books");
+?>
+</table>
+</center>
+<P>
     <div class=links>
         <a href="MainTarget.html" class='links'>MainPage</a>
         <a href="Introduce.html" class='links'> Introduce</a>

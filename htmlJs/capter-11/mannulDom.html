@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作DOM</title>
+    <style type="text/css">
+#divAdvert{
+    font:12pt arial;
+}
+    </style>
+    <script type="text/javascript">
+function divAdvert_onMouseOver(){
+    var divAdvert = document.getElementById("divAdvert");
+    divAdvert.style.color="red";
+    divAdvert.setAttribute("align","center");
+    divAdvert.style.fontStyle = "italic";
+    divAdvert.style.textDecoration = "underline";
+}
+function divAdvert_onMouseOut(){
+    var divAdvert = document.getElementById("divAdvert");
+    divAdvert.setAttribute("align","left");
+    divAdvert.style.color="black";
+    divAdvert.style.fontStyle = "normal";
+    divAdvert.style.textDecoration = "none";
+}
+    </script>
+</head>
+<body>
+   <div id=divAdvert onmouseover = divAdvert_onMouseOver() onmouseout="divAdvert_onMouseOut()">
+   Here is an advertisement.
+   </div>
+</body>
+</html>

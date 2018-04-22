@@ -22,6 +22,8 @@
         </tr>
         <tr>
            <td class='http'><a class="http" href="../../PHP/" target='_blank'>PHP Programe</a></td>
+           <td class='http'><a class="http" href="../../TestPlace/" target='_blank'>Test Place</a></td>
+           <td class='http'><a class="http" href="../../divMain/" target='_blank'>div for main</a></td>
         </tr>
     </table>
     <div class='links'>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom 定位</title>
+</head>
+<body>
+    <h1 id="heading1">My Heading</h1>
+    <p id="par1">This is some text in a paragraph</p>
+    <script type="text/javascript">
+    var h1Element = document.getElementById("heading1");
+    h1Element.style.color = "red";
+    
+    var pElement;
+    if(h1Element.nextSibling.nodetype == 1)
+    pElement = h1Element.nextSibling;
+    else
+    pElement = h1Element.nextSibling.nextSibling;
+    
+    pElement.style.color = "red";
+    </script>
+</body>
+</html>

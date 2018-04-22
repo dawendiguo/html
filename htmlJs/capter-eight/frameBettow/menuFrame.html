@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menuFrame页</title>
+    <script type="text/javascript">
+function choosePage_onchange(){
+var chosePage=document.form1.choosePage;
+var windowObject;
+if(document.form1.radFrame[0].checked == true){
+    windowObject=window.parent.mainFrame.frameTop;
+}
+else
+    windowObject=window.parent.mainFrame.frameBottom;
+    windowObject.location.href=
+        chosePage.options[chosePage.selectedIndex].value;
+    return true;
+}</script>
+</head>
+<body>
+    <form  name=form1>
+    Select frame
+    </br>
+    Top
+    <input type="radio" name="radFrame" checked="checked" />
+    Bottom
+    <input type="radio" name="radFrame" />
+    </br>
+    </br>
+    <select id="choosePage" name="choosePage" onchange="choosePage_onchange()">
+        <option value="example1.html">Page A</option>
+        <option value="example2.html">Page B</option>
+        <option value="example3.html">Page C</option>
+        <option value="example4.html">Page D</option>
+    </select></form>   
+</body>
+</html>

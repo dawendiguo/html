@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example1.html</title>
+    <script type="text/javascript">
+    function btnShow_click()
+{
+document.form1.txtaPageVisited.value=window.parent.returnPageVisited();
+}
+    </script>
+</head>
+<body onload="window.parent.addPage(window.location.href)">
+    <h2>
+    这是example3</h2>
+    <p>
+    <a href="example1.html"> page 1 </a>
+    <a href="example2.html"> page 2 </a>
+    <a href="example3.html"> page 3 </a>
+    <a href="example4.html"> page 4 </a>
+    </p>
+   <form action="" name="form1"> 
+   <textarea id="" name="txtaPageVisited" cols="10" rows="15"></textarea>
+   </br>
+   <input type="button" onclick="btnShow_click()" value="显示"/>
+   </form>
+</body>
+</html>

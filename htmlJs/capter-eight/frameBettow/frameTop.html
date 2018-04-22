@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主FRAME</title>
+    <script type="text/javascript">
+    var pageVisited = new Array();
+    function returnPageVisited()
+{
+ var returnValue="您在访问以下网页\n";
+ var pageVisitedIndex;
+ var numberOfVisited=pageVisited.length;
+for(pageVisitedIndex=0;pageVisitedIndex<numberOfVisited;pageVisitedIndex++)
+returnValue=returnValue+pageVisited[pageVisitedIndex]+"\n";
+return returnValue;
+}
+    function addPage(filename)
+{
+var filenameStart=filename.lastIndexOf("/")+1;
+filename=filename.substr(filenameStart);
+if(pageVisited.indexOf(filename)==-1){
+pageVisited[pageVisited.length]=filename;
+return true;
+}
+}
+    </script>
+</head>
+   <frameset cols="200,*" id=test>
+  <frame name="menuFrame" src="menuFrame.html">
+  <frame name="mainFrame" src="mainFrame.html">
+   </frameset>
+<body>
+</body>
+</html>

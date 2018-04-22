@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>testForm</title>
+    <script type=text/javascript>
+    function btnCheckForm_onclick(){
+    var myform=document.form1;
+    
+    if(myform.txtName.value=""||myform.txtAge.value=""){
+    alert("请填写完成所有内容");
+    if(myform.txtName.value=""){
+    myform.txtName.focus();}
+    else
+    myform.txtAge.focus();
+    }
+    else
+    alert("谢谢你补全相关信息");
+    }
+    
+    function txtAge_onblur(){
+    var txtAge=document.form1.txtAge;
+    if(isNaN(txtAge.value)==true){
+    alert("请输入一个数字！");
+    txtAge.focus();
+    txtAge.select();
+    }
+    }
+    
+    function txtName_onchange(){
+    window.status="Hi "+document.form1.txtName.value;
+    }
+    </script>
+   </head> 
+    <body>
+    <form name=form1>
+        请输入以下信息:
+        <p>Name:
+        <input type=text name=txtName onchange="txtName_onchange()"/>
+        <br />
+        </p>
+        <p>Age:
+        <input type=text name=txtAge onblur="txtAge_onblur()"/>
+        <br />
+        <p>
+        <input type=button name="btnCheckForm" value="检查" onclick="btnCheckForm_onclick()"/
+        >
+        </p>
+    </form>
+</body>
+</html>

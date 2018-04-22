@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新建cookie</title>
+    <script type="text/javascript">
+function setCookie (cookieName,cookieValue,cookiePath,cookieExpires){
+    cookieValue = escape(cookieValue);
+    if(cookieExpires == ""){
+    var nowDate = new Date();
+    nowDate.setMonth(nowDate.getMonth() + 6);
+    cookieExpires = nowDate.toGMTString();
+    }
+    if(cookiePath != ""){
+    cookiePath = ";path="+cookiePath;
+    }
+    document.cookie = cookieName + " = " + cookieValue +";expires="+cookieExpires + cookiePath;
+}
+    setCookie("Name","Bob","","");
+    setCookie("Age","101","","");
+    setCookie("FirstVisit","10 May 2020","","");
+    alert(document.cookie);
+    </script>
+</head>
+<body>
+</body>
+</html>

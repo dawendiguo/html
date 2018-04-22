@@ -9,7 +9,7 @@
 </head>
 <body>
     <script>
-    window.location.href='./../../javascript/'</script>
+    window.location.href='./../../htmlJs/'</script>
     <table>
         <tr> <a href="Books.html">我的图书</a></tr>
         <tr> <a href="JAVA.html">JAVA application</a></tr>

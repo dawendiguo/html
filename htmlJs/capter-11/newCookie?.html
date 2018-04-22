@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有新内容吗?</title>
+    <script type="text/javascript" src="CookieFunction.js">
+    </script>
+</head>
+<body>
+    <h1 align="center">Welcome to my website</h1>
+    <div align="center" id="WhatsNewDiv"></div>
+    <script type="text/javascript">
+    var lastVisit = getCookieValue("lastVisit");
+    if(lastVisit != null)
+{   
+    lastVisit = new Date(lastVisit);
+    var lastUpdated = new Date("Tue, 28 Dec 2020");
+    if(lastVisit < lastUpdated){
+        document.getElementById('WhatsNewDiv').innerHTML = '<a href="WhatsNew.html"><img src="WhatsNew.png" border=0></a>';
+}
+}
+    var nowDate = new Date();
+    setCookie("lastVisit", nowDate.toGMTString(),"","");
+    </script>
+</body>
+</html>

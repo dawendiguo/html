@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父窗口</title>
+    <script type=text/javascript>
+    var newWindow;
+    function btnOpenWin(){
+    var winTop=(screen.height/2)-125;
+    var winLeft=(screen.width/2)-125;
+    var winFeatures="width=250,height=250,";
+    winFeatures=winFeatures+"left="+winLeft+",top"+winTop;
+    newWindow=window.open("children.html","myWindow",winFeatures);
+    }
+    function btnGetText(){
+    if(typedef(newWindow)=="undefined"||newWindow.closed==true)
+    alert("Not open window");
+    else
+    document.form1.text1.value=newWindow.document.form1.text1.value;
+    }
+    function onload(){
+    if(typedef(newWindow)!="undefined"||newWindow.closed==false)
+    newWindow.close();
+    }
+    </script>
+</head>
+<body onload="onload()">
+    <form action="" name=form1>
+    <input type="button" value="NewWindow" onclick="btnOpenWin()" />
+    <p>New windows Texts:</br>
+    <input type="text" name="text1">
+    <input type="button" value="Get text" name="btnGetText" onclick="btnGetText()" />
+    </p>
+    </form>
+</body>
+</html>
