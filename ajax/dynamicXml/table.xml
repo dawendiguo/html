@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table border="1">
+    <tr bgcolor="#cc9900">
+        <td>1行1列</td>
+        <td>1行2列</td>
+        <td>1行3列</td>
+    </tr>
+    <tr bgcolor="#0099ff">
+        <td>2行1列</td>
+        <td>2行2列</td>
+        <td>2行3列</td>
+    </tr>
+    <tr bgcolor="#33ff00">
+        <td>3行1列</td>
+        <td>3行2列</td>
+        <td>3行3列</td>
+    </tr>
+    <tr bgcolor="#ffcccc">
+        <td>4行1列</td>
+        <td>4行2列</td>
+        <td>4行3列</td>
+    </tr>
+</table>

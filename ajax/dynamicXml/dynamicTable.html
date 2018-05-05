@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态显示表格</title>
+    <script src="../ajax.js"></script>
+    <script>
+    var xmlHttp;
+    xmlHttp = createXml();
+    function process(){
+        xmlHttp.open("GET","table.xml");
+        xmlHttp.onreadystatechange=handle_e;
+        xmlHttp.send(null);
+    }
+    function handle_e(){
+        if(xmlHttp.readyState==4&&xmlHttp.status==200){
+            result=xmlHttp.responseText;
+            document.getElementById("message").innerHTML=result;
+        }
+    }
+    </script>
+</head>
+<body onload="process()">
+    <div id="message"></div>
+</body>
+</html>
