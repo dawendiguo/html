@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索人物出处</title>
+    <script type="text/javascript" src="../ajax.js"></script>
+    <script>
+    var xmlHttp = createXml();
+    function process(type1){
+        type=type1;
+        xmlHttp.open("GET","bookPerson.xml");
+        xmlHttp.onreadystatechange=handle_e;
+        xmlHttp.send(null);
+    }
+    function handle_e(){
+        if(xmlHttp.readyState==4&&xmlHttp.status==200){
+            if(type=='all'){
+                var xmlDoc = xmlHttp.responseXML;
+                var result;
+                result = xmlDoc.getElementsByTagName("member");
+                output("列表中的所有人物:",result);
+            }
+            else{
+                var xmlDoc=xmlHttp.responseXML;
+                var m_node;
+                m_node = xmlDoc.getElementsByTagName(type)[0];
+                result = m_node.getElementsByTagName("member");
+                output(type+"中的人物：",result);
+            }
+        }
+    }
+    function output(title,content){
+        var out=title;
+        var current_member=null;
+        for(var i=0;i<content.length;i++){
+            current_member=content[i];
+            out=out+"\n"+current_member.childNodes[0].nodeValue;
+        }
+        alert(out);
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="全部" onclick="process('all')"\><p>
+    <input type="button" value="西游记人物" onclick="process('西游记')"\><p>
+    <input type="button" value="封神榜人物" onclick="process('封神榜')"\><p>
+    <input type="button" value="三国演义人物" onclick="process('三国演义')"\><p>
+    <input type="button" value='水浒传人物' onclick="process('水浒传')"\><p>
+</body>
+</html>

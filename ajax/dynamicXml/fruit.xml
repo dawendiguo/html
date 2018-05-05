@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<woods>
+    <wood>
+        <name>苹果</name>
+        <cost>5</cost>
+        <numbers>89</numbers>
+    </wood>
+    <wood>
+        <name>香蕉</name>
+        <cost>10</cost>
+        <numbers>150</numbers>
+    </wood>
+    <wood>
+        <name>梨</name>    
+        <cost>8</cost>
+        <numbers>122</numbers>
+    </wood>
+    <wood>
+        <name>桔子</name>
+        <cost>6</cost>
+        <numbers>88</numbers>
+    </wood>
+</woods>

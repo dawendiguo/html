@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<members>
+<西游记>
+    <member>孙悟空</member>
+    <member>猪八戒</member>
+    <member>唐三蔵</member>
+    <member>沙和尚</member>
+    <member>佛祖</member>
+    <member>玉皇大帝</member>
+</西游记>
+   
+<封神榜>
+    <member>杨戬</member>
+    <member>哪吒</member>
+    <member>黄天化</member>
+    <member>雷震子</member>
+</封神榜>
+<三国演义>
+    <member>关云长</member>
+    <member>张翼德</member>
+    <member>赵子龙</member>
+    <member>马孟起</member>
+</三国演义>
+<水浒传>
+    <member>林冲</member>
+    <member>武松</member>
+    <member>鲁智深</member>
+    <member>李逵</member>
+</水浒传>
+</members>

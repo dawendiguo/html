@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水果汇</title>
+    <script src="../ajax.js"></script>
+    <script>
+    var xmlHttp = createXml();
+    function process(){
+        xmlHttp.open("GET","fruit.xml");
+        xmlHttp.onreadystatechange=handle_e;
+        xmlHttp.send(null);
+    }
+    function handle_e(){
+        if(xmlHttp.readyState==4&&xmlHttp.status==200){
+            clearPrevious();
+            parser();
+        }
+    }
+    function clearPrevious(){
+        var header = document.getElementsByTagName("header");
+        if(header.hasChildNodes){
+            header.removeChild(header.childNodes[0]);
+        }
+
+        var tablebody = document.getElementById("resultbody");
+        while(tablebody.childNodes.length>0){
+            tablebody.removeChild(tablebody.childNodes[0]);
+        }
+    }
+    function parser(){
+        var result = xmlHttp.responseXML;
+        var wood = null;
+        var name="";
+        var cost="";
+        var numbers="";
+        var woods=result.getElementsByTagName("wood");
+        for(var i = 0;i<woods.length;i++){
+            wood = woods[i];
+            name = wood.getElementsByTagName("name")[0].firstChild.nodeValue;
+            cost = wood.getElementsByTagName("cost")[0].firstChild.nodeValue;
+            numbers = wood.getElementsByTagName("numbers")[0].firstChild.nodeValue;
+            addtablerow(name,cost,numbers);
+        }
+        document.getElementById('resultTable').setAttribute("border","1");
+    }
+    function addtablerow(name,cost,numbers){
+        var row = document.createElement("tr");
+        var cell = document.createElement("td");
+        var textNode = document.createTextNode(name);
+        cell.appendChild(textNode);
+        row.appendChild(cell);
+        var cell = document.createElement("td");
+        var textNode = document.createTextNode(cost);
+        cell.appendChild(textNode);
+        row.appendChild(cell);
+        var cell = document.createElement("td");
+        var textNode = document.createTextNode(numbers);
+        cell.appendChild(textNode);
+        row.appendChild(cell);
+        document.getElementById("resultbody").appendChild(row);
+    }
+    </script>
+</head>
+<body onload="process()">
+    <h1>水果表：</h1>
+    <p>
+    <span id="header"></span>
+    </p>
+    <table id="resultTable">
+        <tbody id="resultbody"></tbody>
+    </table>
+</body>
+</html>
