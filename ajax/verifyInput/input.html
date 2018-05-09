@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证输入内容</title>
+    <script src="verify.js"></script>
+</head>
+<body>
+   <center>
+        <font size="4" color="#ff0000">
+            验证用户输入内容合法性
+        </font>
+       <p>
+            <form action="">
+                <table border='1'>
+                    <tr>
+                        <td width='30%'>姓名:</td>
+                        <td width='70%'><input type="text" id='username' onblur='check_u()'/><div id="u_e"></div></td>
+                    </tr>
+                    <tr>
+                        <td width='30%'>password:</td>
+                        <td width='70%'><input id="password" type="password" onblur="check_p()"\><div id="p_e"></div></td>
+                    </tr>
+                    <tr>
+                        <td width='30%'>Email:</td>
+                        <td width='70%'><input id="mail" type="text" onblur='check_m()'\><div id="m_e"></div></td>
+                    </tr>
+                    <tr>
+                        <td width='30%'>Content:</td>
+                        <td>
+                            <textarea id="text" name="text" cols="30" rows="5" onblur='check_t()'></textarea>
+                            <br/>
+                            <div id="t_e"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'>
+                        <center>
+                            <input type="button" value="Save">
+                            <input type="reset" value='reset'>
+                        </center>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+       </p>
+   </center>
+</body>
+</html>

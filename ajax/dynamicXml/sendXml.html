@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送xml到服务器</title>
+    <script src="../ajax.js"></script>
+    <script>
+    var xmlHttp = createXml();
+    function createxmlcon(){
+        var xml="<members>";
+        var options=document.getElementById("s_c").childNodes;
+        var option=null;
+        for(var i=0;i<options.length;i++){
+            option=options[i];
+            if(option.selected){
+                xml=xml+"<member>"+option.value+"</member>";
+            }
+        }
+        xml=xml+"<\/members>";
+        return xml;
+    }
+    function go(){
+        var date = new date();
+        temp = date.getTime();
+        var url="17-9.php?timestemp="+temp;
+        xmlcon = createxmlcon();
+        xmlHttp.open("POST",url);
+        xmlHttp.setRequestHeader("content-length",xmlcon.length);
+        xmlHttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        xmlHttp.onreadystatechange=handle_e;
+        xmlHttp.send(xmlcon);
+    }
+    function handle_e(){
+        if(xmlHttp.readyState==4&&xmlHttp.status==200){
+            parserResult();
+        }
+    }
+    function parserResult(){
+        var obj=document.getElementById("result");
+        if(obj.hasChildNodes()){
+            obj.removeChild(obj.childNodes[0]);
+        }
+        text=xmlHttp.responseText;
+        var obj_text=document.createTextNode(text);
+        obj.appendChild(obj_text);
+    }
+    function refresh(){
+        var options=document.getElementById('s_c');
+        options.value='';
+    }
+    </script>
+</head>
+<body>
+    按ＣＴＲＬ键选择多项内容。
+    <form action="">
+        <select id="s_c" name="" multiple size='11' style="width:100px;">
+            <option value="孙悟空">孙悟空</option>
+            <option value="牛魔王">牛魔王</option>
+            <option value="二郎神">二郎神</option>
+            <option value="大鹏王">大鹏王</option>
+            <option value="六耳猴">六耳猴</option>
+            <option value="红孩儿">红孩儿</option>
+            <option value="九头虫">九头虫</option>
+            <option value="猪八戒">猪八戒</option>
+            <option value="银角王">银角王</option>
+            <option value="沙和尚">沙和尚</option>
+            <option value="黑熊精">黑熊精</option>
+        </select>
+        <p>
+        <input type="button" value="选择人物" onclick="go()">
+        <input type="button" value="重新选择" onclick="refresh()">
+        <div id="result"></div>
+        </p>
+    </form>
+</body>
+</html>

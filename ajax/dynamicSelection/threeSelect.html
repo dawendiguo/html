@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dynamic selection</title>
+    <script src=dynamic.js></script>
+</head>
+<body onload='init()'>
+    <center>
+    <font size='4' color="#ff0000">Three level selection</font>
+    <p> 
+        <table border='1'>
+            <form>
+            <tr>
+                <td width='30%'>first selection:</td>
+                <td width='70%'>
+                    <select id="s_1" name="" onchange='change_1(this.selectedIndex)' style="width:100px;"></select>
+                </td>
+            </tr>
+            <tr>
+                <td width='30%'>second selection:</td>
+                <td width='70%'>
+                 <select id="s_2" name="" onchange='change_2(this.selectedIndex)' style="width:100px;"></select>
+                </td>
+            </tr>
+            <tr>
+                <td width='30%'>third selection:</td>
+                <td width='70%'><select id="s_3" name="" style='width:100px;'></select></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <center>
+                    <input type="button" value="OK" onclick="go()"\>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td colspan='2'>
+                <center>
+                <div id="r"></div>
+                </center>
+                </td>
+            </tr>
+            </form>
+        </table>
+    </p>
+    </center>
+</body>
+</html
