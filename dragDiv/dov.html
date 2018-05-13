@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态拖动div</title>
+    <script src='move.js'></script>
+</head>
+<body onload='process()'>
+    <div id="div1" style="position:absolute;
+    left:0px;
+    top:0px;
+    width:356px;
+    height:284px;
+    background-color:'#dddddd';
+    cursor:hand;
+    z-index=0;
+    " onmousedown='down(this)' onmouseup='up()' onmousemove='move(this)' onmouseover='over(this)'>
+    <font size='3' color='#006600'>苏幕遮  怀旧(范仲淹)
+    <p style="line-height:120%">
+        <br>
+        碧云天,黄叶地,秋色连波，波上寒烟翠。
+        山映斜阳天接水，
+        芳草无情更在斜阳外。
+    </p>
+    </font>
+    </div>
+</body>
+</html>
