@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text control summary</title>
+    <script src='../../../jquery.js'></script>
+    <script src='js.js'></script>
+    <link rel="stylesheet" href="css.css" type='text/css'>
+</head>
+<body>
+    <p>jQuery's <b>html()</b> method can be used to get HTML content.</p>
+    <input type="submit" id='tmpGetHTML' value='Get HTML'/>
+    <p>jQuery's <b>text()</b> method can be used to get text content.</p>
+    <input id="tmpGetText" type="submit" value='Get Text'/>
+    <p>The jQuery's <b>html()</b> method can also be used to set HTML content,
+    which is done by passing HTML to its first argument.</p>
+    <input id="tmpSetHTML" type="submit" value="set HTML"/>
+    <p>The jQuery's <b>text()</b> method can also be used to set text content,
+    which is done by passing text to its first argument.</p>
+    <input id="tmpSetText" type="submit" value='Set Text'/>
+    <p class="tmpSetMultiple">
+        Text or HTML can be set on just one or many elements.
+        <span></span>
+        <span></span>
+        <span></span>
+    </p>
+    <input id="tmpSetMultiple" type="submit" value='Set Multiple'/>
+    <p>
+    The <b>append()</b> method is used to append content.</p>
+    <input id="tmpAppend" type="submit" value='Append HTML'/>
+    <p>The <b>prepend()</b> method is used to prepend content.</p>
+    <input id="tmpPrepend" type="submit" value='Prepend HTML'/>
+    <p>The <b>before()</b> and <b>after()</b> methods are used to 
+    insert content beside other content.</p>
+    <div class="tmpBeside">
+        <span class="tmpReference"></span>
+    </div>
+    <input id="tmpBefore" type="submit" value='Insert Before'/>
+    <input id="tmpAfter" type="submit" value='Insert After'/>
+    <span id="tmpReferenceBefore tmpTemplate"></span>
+    <span id="tmpReferenceAfter tmpTemplate"></span>
+    <p>
+        The <b>insertBefore()</b> and <b>insertAfter()</b> methods are 
+        used to insert existing content beside other content via a 
+        selector.
+    </p>
+    <div class="tmpBesideSelection">
+    <span class="tmpReference"></span></div>
+    <input id="tmpBeforeSelection" type="submit" value="Insert Before"/>
+    <input id="tmpAfterSelection" type="submit" value='Insert After'/>   
+    <p>The <b>wrap()</b>method is used to wrap each item in a selection
+    with individual wrapper elements.</p>
+    <input id="tmpWrap" type="submit" value='Wrap'/>
+    <p>
+    The <b>wrapAll()</b> method wraps an entire selection of elements in
+    a single wrapper.</p>
+    <input id="tmpWrapAll" type="submit" value='WrapAll'/>
+    <p>The <b>WrapInser()</b> method wraps the contents of every element
+    in a selection with individual wrapper elements.</p>
+    <input id="tmpWrapInner" type="submit" value='Wrap Inner'/>
+    </body>
+</html>

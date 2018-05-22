@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clone Content</title>
+    <link rel="stylesheet" href="css.css" type='text/css'>
+    <script src='../../../jquery.js'></script>
+    <script src='js.js'></script>
+</head> 
+<body>
+    <h4>My Form</h4>
+    <form action="javascript:void(0);" method='post'>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Selected</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr id='tmp'>
+                <td><input type="text" name='tmpTitle[]' value='0'/></td>
+                <td><input type="checkbox" name='tmpTitleChecked[]' value=
+                    '1'/></td>
+            </tr>
+            <tr>
+                <td><input type="text" name='tmpTitle[]' value='0'/></td>
+                <td><input type="checkbox" name='tmpTitleChecked[]' value='1'/></td>
+            </tr>
+            <tr>
+                <td><input type="text" name='tmpFirst[]' value='0'/></td>
+                <td><input type="checkbox" name='tmpTitleChecked[]' value='1'/></td>
+            </tr>
+            </tbody>
+        </table>
+        <input id="tmpAddRow" type="submit" value='Add a Row'/>
+    </form>
+</body>
+</html>
